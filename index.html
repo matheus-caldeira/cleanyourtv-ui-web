@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CleanYourTV UI</title>
+  <meta name="description" content="An Apple TV-style home screen for Android TV, built on CleanYourTV. One APK for every TV, configured with a config.json: TMDB, weather, the shelf and the remote's buttons.">
+  <meta property="og:title" content="CleanYourTV UI">
+  <meta property="og:description" content="An Apple TV-style home screen for Android TV. One APK, one config.json per TV.">
+  <meta property="og:image" content="img/shots/home.jpg">
+  <meta name="theme-color" content="#07080c">
+  <link rel="icon" href="img/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@500;600&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="#">
+        <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="5" width="28" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M11 28h10" stroke="#ffc266" stroke-width="2.2" stroke-linecap="round"/><path d="M16 10l1.4 2.8 3 .4-2.2 2.1.5 3-2.7-1.4-2.7 1.4.5-3-2.2-2.1 3-.4z" fill="#ffc266"/></svg>
+        CleanYourTV UI
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#install" data-i18n="nav.install">Install</a>
+        <a href="#configure" data-i18n="nav.configure">Configure</a>
+        <a href="#reference" data-i18n="nav.reference">config.json</a>
+        <a href="https://github.com/matheus-caldeira/cleanyourtv-ui">GitHub</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-text">
+          <p class="kicker" data-i18n="hero.kicker">Android TV · Google TV · open source</p>
+          <h1 data-i18n="hero.h1">A calm, Apple TV-style home screen for your Android TV.</h1>
+          <p class="lede" data-i18n-html="hero.lede">Built on <a href="https://github.com/Gathin23/cleanyourtv">CleanYourTV</a>, which strips the factory bloat off your TV, with the look of <a href="https://github.com/simbasjungles/free-my-tv">Free My TV</a>. Browse movies and shows with TMDB, see where each one streams, and open it right in the app.</p>
+          <div class="btns">
+            <a class="btn btn-main" href="https://github.com/matheus-caldeira/cleanyourtv-ui/releases/latest">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>
+              <span data-i18n="hero.download">Download the APK</span>
+            </a>
+            <a class="btn" href="#configure" data-i18n="hero.configure">Make your config.json</a>
+            <a class="btn" href="https://github.com/matheus-caldeira/cleanyourtv-ui" data-i18n="hero.source">Source on GitHub</a>
+          </div>
+          <ul class="tags" aria-label="At a glance">
+            <li data-i18n="tag.one">One APK for every TV</li>
+            <li data-i18n="tag.android">Android 9+</li>
+            <li>MIT</li>
+            <li data-i18n="tag.noads">No ads, no telemetry</li>
+          </ul>
+        </div>
+        <figure class="tv">
+          <img src="img/shots/home.jpg" width="1280" height="720" alt="The home screen: the clock and the weather, picks from your streaming apps, and the app shelf" data-i18n-alt="hero.alt">
+        </figure>
+      </div>
+    </section>
+
+    <section id="features" class="sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kicker" data-i18n="features.kicker">What you get</p>
+          <h2 data-i18n="features.h2">Your apps, the picks on them, and nothing else.</h2>
+          <p class="lede" data-i18n="features.lede">CleanYourTV removes what the factory put on the TV. This fork adds a home screen to it, and Explore, a catalog of movies and shows across the apps you have.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8"/></svg></div>
+            <h3 data-i18n="f1.h">Home screen</h3>
+            <ul data-i18n-html="f1.list">
+              <li><b>For You</b>: TMDB picks on your services, with Explore, Movies and Shows tabs.</li>
+              <li>An app shelf with official logos; hold OK on an app to move it or change its tile.</li>
+              <li>Weather for your city, a theme that darkens at sunset, a photo or clock screensaver.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></div>
+            <h3 data-i18n="f2.h">Explore</h3>
+            <ul data-i18n-html="f2.list">
+              <li>Banners, today's top 10, catalogs for Movies, Shows, Kids and Anime.</li>
+              <li>Search and categories with one filter; title pages with cast, seasons and trailers.</li>
+              <li><b>Watch on…</b> opens the title itself in Netflix, Disney+, Prime Video, Max or Apple TV.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="7" y="2" width="10" height="20" rx="4"/><circle cx="12" cy="8" r="1.6"/><path d="M10 14h4M10 17h4"/></svg></div>
+            <h3 data-i18n="f3.h">Remote and configuration</h3>
+            <ul data-i18n-html="f3.list">
+              <li>The remote's app buttons open any app, an HDMI input, Explore or your list.</li>
+              <li>One <code>config.json</code> per TV: the TMDB key, city, shelf and buttons, pushed over ADB.</li>
+              <li>No ADB left on afterwards, no network beyond TMDB, Wikidata and the weather.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="gallery" tabindex="0" aria-label="Screenshots">
+          <figure><img src="img/shots/explore.jpg" width="1280" height="720" loading="lazy" alt="Explore: a banner with the title's logo over its picture"><figcaption data-i18n="g.explore">Explore, with the title's logo over its picture.</figcaption></figure>
+          <figure><img src="img/shots/explore-menu.jpg" width="1280" height="720" loading="lazy" alt="Explore's side menu"><figcaption data-i18n="g.menu">The side menu: search, your list, catalogs, one page per service.</figcaption></figure>
+          <figure><img src="img/shots/explore-top10.jpg" width="1280" height="720" loading="lazy" alt="Today's top 10"><figcaption data-i18n="g.top10">Today's top 10.</figcaption></figure>
+          <figure><img src="img/shots/explore-filters.jpg" width="1280" height="720" loading="lazy" alt="Filters by type, category and year"><figcaption data-i18n="g.filters">One filter for search and categories.</figcaption></figure>
+          <figure><img src="img/shots/title.jpg" width="1280" height="720" loading="lazy" alt="A title page"><figcaption data-i18n="g.title">A title page: where it streams, cast, seasons.</figcaption></figure>
+          <figure><img src="img/shots/explore-anime.jpg" width="1280" height="720" loading="lazy" alt="The Anime catalog"><figcaption data-i18n="g.anime">The Anime catalog.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="install" class="sec band">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kicker" data-i18n="install.kicker">Install</p>
+          <h2 data-i18n="install.h2">One APK. Two ways to put it on the TV.</h2>
+          <p class="lede" data-i18n="install.lede">Nothing about your TV is built into the APK. Install it, then hand it this TV's settings in a config.json, or set them on the TV.</p>
+        </div>
+
+        <div class="card prep" data-i18n-html="install.prep">
+          <h3>Before either: switch on debugging on the TV</h3>
+          <p class="dim">Settings → Device Preferences → About → press OK on <b>Build</b> seven times → back → Developer options → <b>USB debugging</b> on (and <b>Network debugging</b> if there is one). Note the TV's IP address under Network. To clean the TV of its bloat too, follow <a href="https://github.com/Gathin23/cleanyourtv#quick-start">CleanYourTV's Quick start</a> first: the home screen works with or without it.</p>
+        </div>
+
+        <div class="routes">
+          <article class="card route">
+            <div class="tag-line"><span class="pill pill-amber" data-i18n="apk.pill">Simplest</span><span class="pill">adb</span></div>
+            <h3 data-i18n="apk.h">From the release APK</h3>
+            <p class="dim" data-i18n="apk.lede">No JDK, no Android SDK, no build. You need only Android's platform-tools (adb).</p>
+            <ol class="steps">
+              <li>
+                <p data-i18n-html="apk.s1">Download <b>CleanYourTV-UI-&lt;version&gt;.apk</b> from the <a href="https://github.com/matheus-caldeira/cleanyourtv-ui/releases/latest">latest release</a>, and check it against its <code>.sha256</code>.</p>
+              </li>
+              <li>
+                <p data-i18n-html="apk.s2">Install it and make it <b>Home</b>. Accept “Allow USB debugging?” on the TV the first time. The TV's own launcher stays installed.</p>
+                <div class="code"><pre data-tv>adb connect <span data-ip>192.168.1.50</span>
+adb install -r CleanYourTV-UI-1.1.0.apk
+adb shell cmd package set-home-activity --user 0 io.cleanyourtv.ui/.HomeActivity
+adb shell input keyevent KEYCODE_HOME</pre></div>
+              </li>
+              <li>
+                <p data-i18n-html="apk.s3">Make this TV's <a href="#configure">config.json</a> below, and push it:</p>
+                <div class="code"><pre>adb push config.json /data/local/tmp/cyt-ui-config.json
+adb shell 'content write --uri content://io.cleanyourtv.ui.config/config.json &lt; /data/local/tmp/cyt-ui-config.json &amp;&amp; rm /data/local/tmp/cyt-ui-config.json'
+adb shell input keyevent KEYCODE_HOME</pre></div>
+                <p class="small dim" data-i18n="apk.s3b">Or skip the file: Settings → Home Settings on the TV, and TMDB account to type the key.</p>
+              </li>
+              <li>
+                <p data-i18n-html="apk.s4">Optional: the screensaver, and the remote's app buttons inside any app. The second line replaces other accessibility services: check <code>settings get secure enabled_accessibility_services</code> first.</p>
+                <div class="code"><pre>adb shell settings put secure screensaver_components io.cleanyourtv.ui/.Screensaver
+adb shell settings put secure enabled_accessibility_services io.cleanyourtv.ui/.RemoteKeyService
+adb shell settings put secure accessibility_enabled 1</pre></div>
+                <p class="small dim" data-i18n-html="apk.s4b">On Android 11 the screensaver is <code>.ScreensaverAlone</code>.</p>
+              </li>
+              <li>
+                <p data-i18n-html="apk.s5">Switch <b>Network debugging</b> off on the TV when you are done: port 5555 is plaintext.</p>
+              </li>
+            </ol>
+          </article>
+
+          <article class="card route">
+            <div class="tag-line"><span class="pill" data-i18n="clone.pill">For tinkerers</span><span class="pill">git · JDK 17 · Android SDK</span></div>
+            <h3 data-i18n="clone.h">From the clone</h3>
+            <p class="dim" data-i18n="clone.lede">The scripts add CleanYourTV's safeguards: they check Android first, start the new Home before touching the old one, and roll back if Home does not land.</p>
+            <ol class="steps">
+              <li>
+                <p data-i18n="clone.s1">Clone the repository and set up the tools' Python:</p>
+                <div class="code"><pre>git clone https://github.com/matheus-caldeira/cleanyourtv-ui.git
+cd cleanyourtv-ui
+python3 -m venv tools/venv
+tools/venv/bin/pip install -r tools/requirements.txt</pre></div>
+              </li>
+              <li>
+                <p data-i18n-html="clone.s2">Save this TV's <a href="#configure">config.json</a> in the folder, then build and install in one go:</p>
+                <div class="code"><pre>TV_HOST=<span data-ip>192.168.1.50</span> CONFIG=config.json KEY_SERVICE=1 \
+  launcher-ui/build-and-install.sh</pre></div>
+                <p class="small dim" data-i18n-html="clone.s2b">Or install the release APK with the same safeguards and no build: add <code>APK=~/Downloads/CleanYourTV-UI-1.1.0.apk</code>.</p>
+              </li>
+              <li>
+                <p data-i18n="clone.s3">Change settings later without reinstalling:</p>
+                <div class="code"><pre>TV_HOST=<span data-ip>192.168.1.50</span> launcher-ui/config.sh config.json
+TV_HOST=<span data-ip>192.168.1.50</span> launcher-ui/config.sh --theme themes/aurora config.json
+TV_HOST=<span data-ip>192.168.1.50</span> launcher-ui/config.sh --reset</pre></div>
+              </li>
+              <li>
+                <p data-i18n-html="clone.s4">Build the release APK yourself: <code>RELEASE=1 launcher-ui/build.sh</code>. A personal build (no <code>RELEASE</code>) also reads <code>launcher-ui/config.properties</code> as its first values.</p>
+              </li>
+            </ol>
+          </article>
+        </div>
+
+        <p class="note" data-i18n-html="install.note"><b>Switching between the release APK and your own build?</b> They are signed with different keys: uninstall first with <code>adb uninstall io.cleanyourtv.ui</code>, which also clears the settings made on the TV. To go back to the TV's own home screen: <code>adb shell cmd package set-home-activity --user 0 &lt;its package&gt;/&lt;activity&gt;</code>, or undo everything with CleanYourTV's <code>tools/restore.sh</code>.</p>
+      </div>
+    </section>
+
+    <section id="configure" class="sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kicker" data-i18n="gen.kicker">config.json</p>
+          <h2 data-i18n="gen.h2">Make this TV's config.json.</h2>
+          <p class="lede" data-i18n="gen.lede">Fill in what you want; leave the rest empty and the TV keeps its defaults. Everything stays in your browser: nothing is sent anywhere, except the city search, which asks Open-Meteo.</p>
+        </div>
+
+        <div class="gen">
+          <form class="form" id="gen" autocomplete="off" onsubmit="return false">
+            <fieldset>
+              <legend data-i18n="gen.tmdb">TMDB</legend>
+              <label class="f"><span data-i18n="gen.key">API key or read access token</span>
+                <input type="password" id="tmdb_key" spellcheck="false" placeholder="eyJhbGciOi… / 3f1c…">
+                <span class="hint" data-i18n-html="gen.keyHint">Free at <a href="https://www.themoviedb.org/settings/api">themoviedb.org → Settings → API</a>. The picks and Explore need it. Keep this file to yourself: it carries your key.</span>
+              </label>
+              <div class="row">
+                <label class="f"><span data-i18n="gen.region">Streaming region</span>
+                  <select id="tmdb_region"></select>
+                </label>
+                <label class="f"><span data-i18n="gen.language">Language</span>
+                  <select id="language">
+                    <option value="" data-i18n="opt.unset">— TV's default —</option>
+                    <option value="auto" data-i18n="opt.auto">Follow the TV</option>
+                    <option value="en">English</option><option value="pt">Português</option><option value="es">Español</option>
+                    <option value="de">Deutsch</option><option value="fr">Français</option><option value="ru">Русский</option><option value="tr">Türkçe</option>
+                  </select>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend data-i18n="gen.city">City and weather</legend>
+              <div class="inline">
+                <input type="text" id="city_q" placeholder="São Paulo" aria-label="City">
+                <button type="button" class="btn btn-small" id="city_find" data-i18n="gen.find">Find</button>
+              </div>
+              <div class="cities" id="cities"></div>
+              <div class="row">
+                <label class="f"><span data-i18n="gen.cityName">Name on the card</span><input type="text" id="city_name"></label>
+                <label class="f"><span data-i18n="gen.lat">Latitude</span><input type="number" step="any" id="latitude"></label>
+                <label class="f"><span data-i18n="gen.lon">Longitude</span><input type="number" step="any" id="longitude"></label>
+              </div>
+              <div class="row">
+                <label class="f"><span data-i18n="gen.temp">Temperature</span>
+                  <select id="temperature"><option value="" data-i18n="opt.unset">— TV's default —</option><option value="auto" data-i18n="opt.auto">Follow the TV</option><option value="C">°C</option><option value="F">°F</option></select>
+                </label>
+                <label class="f"><span data-i18n="gen.weather">Weather widget</span>
+                  <select id="weather"><option value="" data-i18n="opt.unset">— TV's default —</option><option value="true" data-i18n="opt.on">On</option><option value="false" data-i18n="opt.off">Off</option></select>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend data-i18n="gen.look">Look</legend>
+              <div class="row">
+                <label class="f"><span data-i18n="gen.theme">Theme</span>
+                  <select id="theme"><option value="" data-i18n="opt.unset">— TV's default —</option><option value="auto" data-i18n="opt.sunset">Dark after sunset</option><option value="light" data-i18n="opt.light">Light</option><option value="dark" data-i18n="opt.dark">Dark</option></select>
+                </label>
+                <label class="f"><span data-i18n="gen.clock">Clock</span>
+                  <select id="clock"><option value="" data-i18n="opt.unset">— TV's default —</option><option value="auto" data-i18n="opt.auto">Follow the TV</option><option value="24h">24h</option><option value="12h">12h</option></select>
+                </label>
+                <label class="f"><span data-i18n="gen.saver">Screensaver</span>
+                  <select id="screensaver"><option value="" data-i18n="opt.unset">— TV's default —</option><option value="photos" data-i18n="opt.photos">Picks' photos</option><option value="aurora" data-i18n="opt.aurora">Clock and aurora</option></select>
+                </label>
+              </div>
+              <div class="row">
+                <label class="f"><span data-i18n="gen.crypto">Crypto quotes widget</span>
+                  <select id="show_crypto"><option value="" data-i18n="opt.unset">— TV's default —</option><option value="true" data-i18n="opt.on">On</option><option value="false" data-i18n="opt.off">Off</option></select>
+                </label>
+                <label class="f"><span data-i18n="gen.currency">Currency</span>
+                  <select id="currency"><option value="" data-i18n="opt.unset">— TV's default —</option><option>USD</option><option>BRL</option><option>EUR</option><option>GBP</option><option>TRY</option></select>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend data-i18n="gen.apps">Apps</legend>
+              <div class="f">
+                <span class="hint" data-i18n="gen.shelfHint">The shelf, in order. Tap to add or remove; one package per line below for any other app.</span>
+                <div class="chips" id="shelf_chips"></div>
+              </div>
+              <label class="f"><span data-i18n="gen.shelf">Shelf (one package per line)</span><textarea id="shelf" spellcheck="false"></textarea></label>
+              <label class="f"><span data-i18n="gen.hidden">Hidden apps (one package per line)</span><textarea id="hidden_apps" spellcheck="false" placeholder="com.tcl.browser"></textarea></label>
+            </fieldset>
+
+            <fieldset>
+              <legend data-i18n="gen.remote">Remote buttons</legend>
+              <label class="f"><span data-i18n="gen.model">Your TV's remote</span>
+                <select id="remote"></select>
+                <span class="hint" data-i18n-html="gen.modelHint">From the <code>examples/&lt;model&gt;/remote.json</code> files in the repository. Yours is not there? Map it with <code>tools/tv.py 'getevent -lt'</code> and send a pull request.</span>
+              </label>
+              <p class="dim small" id="remote_note"></p>
+              <div class="buttons-table" id="buttons"></div>
+            </fieldset>
+          </form>
+
+          <aside class="out" aria-label="Result">
+            <div class="out-head">
+              <h3>config.json</h3>
+              <div class="btns">
+                <button type="button" class="btn btn-small" id="copy_json" data-i18n="gen.copy">Copy</button>
+                <button type="button" class="btn btn-small btn-main" id="download" data-i18n="gen.download">Download</button>
+              </div>
+            </div>
+            <div class="code"><pre id="json"></pre></div>
+            <p class="warn" id="warnings" role="status"></p>
+            <div class="out-head">
+              <h3 data-i18n="gen.push">Push it</h3>
+              <div class="seg" role="group" aria-label="Route">
+                <button type="button" data-route="apk" aria-pressed="true">APK + adb</button>
+                <button type="button" data-route="clone" aria-pressed="false" data-i18n="gen.clone">Clone</button>
+              </div>
+            </div>
+            <label class="f"><span data-i18n="gen.ip">The TV's IP address</span><input type="text" id="ip" placeholder="192.168.1.50" inputmode="decimal"></label>
+            <div class="code"><pre id="commands"></pre></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="reference" class="sec band">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kicker" data-i18n="ref.kicker">Reference</p>
+          <h2 data-i18n="ref.h2">Every config.json key.</h2>
+          <p class="lede" data-i18n="ref.lede">Each new file is applied once, the next time Home opens, as if those choices were made on the TV. What is changed on the TV afterwards wins until the next push. A value the app does not accept is skipped, never guessed.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th data-i18n="ref.key">Key</th><th data-i18n="ref.value">Value</th><th data-i18n="ref.notes">Notes</th></tr></thead>
+            <tbody id="ref_rows"></tbody>
+          </table>
+        </div>
+        <p class="dim small after-table" data-i18n-html="ref.actions">A button's action is a package, <code>input:&lt;TV input id&gt;</code>, <code>live</code>, <code>settings</code>, <code>home</code>, <code>tmdb:explore</code>, <code>tmdb:watchlist</code>, or <code>""</code> for what the button did before. The full reference is <a href="https://github.com/matheus-caldeira/cleanyourtv-ui/blob/main/launcher-ui/README.md#configjson">launcher-ui/README.md</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p data-i18n-html="foot.credits">Built on <a href="https://github.com/Gathin23/cleanyourtv">CleanYourTV</a> by Gathin and <a href="https://github.com/simbasjungles/free-my-tv">Free My TV</a>, both MIT. CleanYourTV UI is MIT too: <a href="https://github.com/matheus-caldeira/cleanyourtv-ui">matheus-caldeira/cleanyourtv-ui</a>.</p>
+      <p data-i18n="foot.tmdb">This product uses the TMDB API but is not endorsed or certified by TMDB. Service ids from Wikidata. Weather by Open-Meteo.com (CC BY 4.0). Netflix, YouTube, Prime Video, Disney+, Apple TV, Max and the other names belong to their owners; this project is not affiliated with any of them.</p>
+      <p data-i18n-html="foot.contact">Questions and problems: <a href="https://github.com/matheus-caldeira/cleanyourtv-ui/issues">issues</a>.</p>
+    </div>
+  </footer>
+
+  <script src="remotes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
